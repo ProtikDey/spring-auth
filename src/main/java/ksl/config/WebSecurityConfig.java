@@ -26,9 +26,9 @@ public class WebSecurityConfig {
         http
                 .csrf().disable()
                 .cors().disable()
-                .authorizeHttpRequests()
-                .requestMatchers("./").permitAll()
-                .and()
+//                .authorizeHttpRequests()
+//                .requestMatchers("/**").permitAll()
+//                .and()
                 .addFilterBefore(new StatelessLoginFilter("/api/login", authManager(), jwtTokenService),
                         UsernamePasswordAuthenticationFilter.class);
 
