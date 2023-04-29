@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'main'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1'
 sourceCompatibility = '17'
 
 configurations {
@@ -37,6 +37,6 @@ dependencies {
 	annotationProcessor "javax.xml.bind:jaxb-api:2.3.1"
 }
 
-tasks.named('test') {
-	useJUnitPlatform()
-}
+//tasks.named('test') {
+//	useJUnitPlatform()
+//}
