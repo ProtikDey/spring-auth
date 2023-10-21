@@ -19,10 +19,10 @@ import java.util.ArrayList;
 public class AuthUserDetailsServiceImpl implements AuthUserDetailsService {
 
     private final UserRepository userRepository;
+
     public AuthUserDetailsServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
-
 
     @Override
     public final UserDetails loadUserByUsername(String params) {
