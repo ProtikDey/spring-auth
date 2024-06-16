@@ -1,0 +1,6 @@
+services:
+  auth:
+    image: auth
+    container_name: auth-container
+    ports:
+      - "8080:20020"

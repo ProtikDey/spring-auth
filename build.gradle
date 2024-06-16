@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.2.0'
 	id 'io.spring.dependency-management' version '1.1.4'
+	id 'com.google.cloud.tools.jib' version '3.4.3'
 }
 
 group = 'main'
@@ -12,6 +13,8 @@ bootJar.archiveVersion = '1.0'
 java {
 	sourceCompatibility = '21'
 }
+
+bootBuildImage.setImageName({bootJar.archiveBaseName}':v1')
 
 springBoot {
 	buildInfo()
@@ -36,7 +39,6 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-undertow'
 	compileOnly 'org.projectlombok:lombok'
-	runtimeOnly 'com.mysql:mysql-connector-j'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
@@ -44,5 +46,6 @@ dependencies {
 	implementation 'io.jsonwebtoken:jjwt:0.9.1'
 
 	annotationProcessor "javax.xml.bind:jaxb-api:2.3.1"
+	runtimeOnly 'com.h2database:h2'
 }
 
